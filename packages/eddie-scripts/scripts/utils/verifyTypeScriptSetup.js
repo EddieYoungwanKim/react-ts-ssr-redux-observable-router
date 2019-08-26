@@ -116,6 +116,7 @@ function verifyTypeScriptSetup() {
     allowSyntheticDefaultImports: { suggested: true },
     strict: { suggested: true },
     forceConsistentCasingInFileNames: { suggested: true },
+    baseUrl: { suggested: 'src' },
     // TODO: Enable for v4.0 (#6936)
     // noFallthroughCasesInSwitch: { suggested: true },
 

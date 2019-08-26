@@ -27,7 +27,6 @@ module.exports = function(appPath, appName) {
     require.resolve(path.join(__dirname, '..', 'package.json'))
   );
   const appPackage = require(path.join(appPath, 'package.json'));
-  const useYarn = true;
 
   // Copy over some of the devDependencies
   appPackage.dependencies = appPackage.dependencies || {};
@@ -50,10 +49,7 @@ module.exports = function(appPath, appName) {
   );
 
   // Copy the files for the user
-  const templatePath = path.join(
-    ownPath,
-    useTypeScript ? 'template-typescript' : 'template'
-  );
+  const templatePath = path.join(ownPath, 'template');
   if (fs.existsSync(templatePath)) {
     fs.copySync(templatePath, appPath);
   } else {
@@ -63,8 +59,6 @@ module.exports = function(appPath, appName) {
     return;
   }
 
-  // Rename gitignore after the fact to prevent npm from renaming it to .npmignore
-  // See: https://github.com/npm/npm/issues/1862
   try {
     fs.moveSync(
       path.join(appPath, 'gitignore'),
@@ -82,16 +76,8 @@ module.exports = function(appPath, appName) {
     }
   }
 
-  let command;
-  let args;
-
-  if (useYarn) {
-    command = 'yarnpkg';
-    args = ['add'];
-  } else {
-    command = 'npm';
-    args = ['install', '--save'].filter(e => e);
-  }
+  const command = 'yarnpkg';
+  let args = ['add'];
 
   // Install additional template dependencies, if present
   const templateDependenciesPath = path.join(

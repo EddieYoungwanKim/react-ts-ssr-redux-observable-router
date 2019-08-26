@@ -151,7 +151,7 @@ function install(root, dependencies) {
     let command;
     let args;
     command = 'yarnpkg';
-    args = ['add', '--exact'];
+    args = ['add'];
     [].push.apply(args, dependencies);
     args.push('--cwd');
     args.push(root);
