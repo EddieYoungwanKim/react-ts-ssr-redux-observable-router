@@ -42,10 +42,17 @@
     "universal-router": "^8.2.1",
     "yarn": "^1.17.3"
   },
+  "lint-staged": {
+    "*.{js,ts,tsx}": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
   "scripts": {
     "start": "eddie-scripts start",
     "build": "eddie-scripts build",
-    "test": "eddie-scripts test"
+    "test": "eddie-scripts test",
+    "precommit": "lint-staged"
   },
   "browserslist": {
     "production": [

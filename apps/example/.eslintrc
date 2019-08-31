@@ -1,6 +1,10 @@
 {
-  "extends": "react-app",
+  "extends": [
+    "react-app",
+    "prettier/@typescript-eslint",
+    "plugin:prettier/recommended",
+  ],
   "rules": {
-    "react-hooks/exhaustive-deps": false
+    "prettier/prettier": "error"
   }
 }
