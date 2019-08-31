@@ -14,6 +14,15 @@
   "bin": {
     "eddie-scripts": "./bin/eddie-scripts.js"
   },
+  "lint-staged": {
+    "*.{js,ts,tsx}": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "scripts": {
+    "precommit": "lint-staged"
+  },
   "browserslist": {
     "production": [
       ">0.2%",
