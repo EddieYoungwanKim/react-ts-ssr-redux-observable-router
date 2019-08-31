@@ -1,12 +1,12 @@
-import React, { FC } from "react";
-import { connect } from "react-redux";
-import styled from "styled-components";
-import { RootState } from "typesafe-actions";
-import { Todo } from "Todo-Types";
-import { Button } from "semantic-ui-react";
-import { TodoFormComponent, TodoListComponent, TodoComponent } from "./components";
-import * as selectors from "stateManager/todos/selectors";
-import * as actions from "stateManager/todos/actions";
+import React, { FC } from 'react';
+import { connect } from 'react-redux';
+import styled from 'styled-components';
+import { RootState } from 'typesafe-actions';
+import { Todo } from 'Todo-Types';
+import { Button } from 'semantic-ui-react';
+import { TodoFormComponent, TodoListComponent, TodoComponent } from './components';
+import * as selectors from 'stateManager/todos/selectors';
+import * as actions from 'stateManager/todos/actions';
 
 const Title = styled.h1`
   font-size: 1.5em;
