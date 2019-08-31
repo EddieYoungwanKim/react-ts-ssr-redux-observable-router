@@ -15,15 +15,11 @@ export const TodoFormComponent: FC<Props> = ({ addTodo }) => {
     addTodo(title);
     setTitle('');
   };
+
   return (
     <Form>
       <Form.Group widths="equal">
-        <Form.Input
-          fluid
-          value={title}
-          placeholder="Enter new item"
-          onChange={onInputChange}
-        />
+        <Form.Input fluid value={title} placeholder="Enter new item" onChange={onInputChange} />
         <Form.Button type="submit" onClick={onSubmit} disabled={!title}>
           Add
         </Form.Button>
