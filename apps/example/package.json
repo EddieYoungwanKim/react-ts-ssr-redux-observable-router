@@ -45,13 +45,15 @@
   "lint-staged": {
     "*.{js,ts,tsx}": [
       "eslint --fix",
+      "test:staged",
       "git add"
     ]
   },
   "scripts": {
     "start": "eddie-scripts start",
     "build": "eddie-scripts build",
-    "test": "eddie-scripts test",
+    "test": "cross-env CI=true eddie-scripts test",
+    "test:staged": "cross-env CI=true eddie-scripts test --env=jsdom --findRelatedTests",
     "precommit": "lint-staged"
   },
   "browserslist": {

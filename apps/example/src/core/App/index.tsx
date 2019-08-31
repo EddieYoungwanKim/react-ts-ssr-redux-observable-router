@@ -16,18 +16,7 @@ type LinkItem = {
 interface Props {}
 
 const App: FC<Props> = ({ children }) => {
-  const links: LinkItem[] = [
-    {
-      key: '1',
-      title: 'Home',
-      to: '/',
-    },
-    {
-      key: '2',
-      title: 'Todos',
-      to: '/todos',
-    },
-  ];
+  const links: LinkItem[] = [{ key: '1', title: 'Home', to: '/' }, { key: '2', title: 'Todos', to: '/todos' }];
   return (
     <Layout>
       <Toolbar>
