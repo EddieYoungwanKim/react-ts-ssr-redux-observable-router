@@ -17,18 +17,13 @@ export default () => {
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
   };
+
   return (
     <form onSubmit={handleSubmit}>
       <h3>Sign in</h3>
       <label>
         ID:{' '}
-        <input
-          type="text"
-          name="id"
-          value={loginForm.id}
-          onChange={handleChange}
-          placeholder="enter you username"
-        />
+        <input type="text" name="id" value={loginForm.id} onChange={handleChange} placeholder="enter you username" />
       </label>
       <label>
         Password:{' '}
